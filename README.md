@@ -14,11 +14,11 @@ This description contains the requirements for the __code submission__, which ha
 
 ## Prerequisites
 
-* Make sure you have __Java 8 Development Kit__ installed:
+* Make sure you have __Java 8 Development Kit__ installed. 
 
-```$ java -version```
-
-should have a similar output:
+```
+$ java -version
+```
 
 ```
 java version "1.8.0_66"
@@ -26,13 +26,14 @@ Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
 ```
 
-The minor version (in this case 66) is unimportant. If you don't have Java 8 Development Kit installed, install it: http://www.oracle.com/technetwork/java/javase/downloads/index.html (available for all platforms).
+* The minor version (in this case 66) is unimportant. If you don't have Java 8 Development Kit installed, install it: http://www.oracle.com/technetwork/java/javase/downloads/index.html (available for all platforms).
   
-* Set up the __Maven__ build system. Instructions are available here: https://maven.apache.org/install.html (for all platforms). Double-check that you have at least Maven 3.3.3:
+* Set up the __Maven__ build system. Instructions are available here: https://maven.apache.org/install.html (for all platforms).
+* Double-check that you have at least Maven 3.3.3:
 
-```$ mvn -v```
-
-should have a similar output:
+```
+$ mvn -v
+```
 
 ```
 Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T12:57:37+01:00)
@@ -66,7 +67,8 @@ OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 				|-- config.properties
 ```
 
-* Edit the ```pom.xml``` file; look for the following lines:
+* Edit the ```pom.xml``` file
+* Look for the following lines:
 
 ```xml
 <student.name>FirstnameLastname</student.name>
@@ -81,9 +83,11 @@ OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 * Open a command-line prompt and navigate to the __co3326-master__ folder.
 * Build the project with the following command:
 
-``` $ mvn clean package ```
+```
+$ mvn clean package
+```
 
-* It should have an output ending with:
+* This should have an output ending with:
 
 ```
 ...
@@ -105,17 +109,18 @@ OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 * There is a _test file_ in your project folder (```test.txt```), which is a valid test file and similar to the one that will be used by the automatic testing process when your submission will be evaluated, so this is the test file you will have to make sure that your code runs against successfully.
 * In a command-line prompt issue the following cmmand:
    
-``` $ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt```
+```
+$ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt
+```
 
-obviously, using the correct file name. The output should be:
+* Obviously, you'll use using the correct file name. The output should be:
 
 ```
 FirstnameLastname
 27644437
 {"communication":[{"text":"University of London"}]}
-Unable to invoke no-args constructor for interface co3326.User. Register an InstanceCreator with Gson for this type may fix this problem.
-Unable to invoke no-args constructor for interface co3326.User. Register an InstanceCreator with Gson for this type may fix this problem.
-
+{"alice":{},"communication":[{"text":"Hi Bob!"}]}
+{"alice":{},"bob":{},"charlie":{},"communication":[{"text":"Hello World!"}]}
 ```
 
 ## Develop
@@ -141,12 +146,12 @@ The following output is correct for this test file, both in terms of _format_ an
 ```json
 FirstnameLastname
 27644437
-{"alice":{"rsa":{"p":313,"q":577,"e":93563,"n":180601,"r":179712,"d":117683}},"bob":{"rsa":{"p":17,"q":863,"e":103,"n":14671,"r":13792,"d":4151}},"charlie":{"rsa":{"p":79,"q":929,"e":60373,"n":73391,"r":72384,"d":13885}},"communication":[{"text":"University of London","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110]},{"encoded":[107065,52809,88507,154319,128497,125540,60910,88507,174328,53386,139715,2154,174967,139715,109212,2154,52809,168467,2154,52809]},{"text":"University of London :: intercepted","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[70570,25473,24366,43521,60324,62759,2298,24366,9499,68636,51783,72628,69542,51783,243,72628,25473,37725,72628,25473,51783,20860,20860,51783,24366,25473,9499,60324,62759,33447,60324,42119,9499,60324,37725]},{"text":"University of London :: intercepted :: received"}]}
-{"alice":{"rsa":{"p":313,"q":787,"e":33877,"n":246331,"r":245232,"d":59149}},"bob":{"rsa":{"p":73,"q":677,"e":43219,"n":49421,"r":48672,"d":45307}},"charlie":{"rsa":{"p":199,"q":461,"e":1601,"n":91739,"r":91080,"d":11321}},"communication":[{"text":"Hi Bob!","encoded":[72,105,32,66,111,98,33]},{"encoded":[229279,201403,88012,212789,165051,117839,160611]},{"text":"Hi Bob! :: intercepted","encoded":[72,105,32,66,111,98,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[15978,60926,18315,22440,8940,7688,18848,18315,50400,50400,18315,60926,78841,17711,14406,78215,70754,14406,58153,17711,14406,77814]},{"text":"Hi Bob! :: intercepted :: received"}]}
-{"alice":{"rsa":{"p":313,"q":787,"e":103087,"n":246331,"r":245232,"d":126559}},"bob":{"rsa":{"p":157,"q":641,"e":29203,"n":100637,"r":99840,"d":48667}},"charlie":{"rsa":{"p":373,"q":977,"e":258845,"n":364421,"r":363072,"d":74933}},"communication":[{"text":"Hello World!","encoded":[72,101,108,108,111,32,87,111,114,108,100,33]},{"encoded":[48213,311218,150906,150906,187364,343442,170986,187364,166325,150906,245842,337141]},{"text":"Hello World! :: intercepted","encoded":[72,101,108,108,111,32,87,111,114,108,100,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[294580,181265,149385,149385,283553,136995,216187,283553,197484,149385,200153,290070,136995,251883,251883,136995,353286,60176,103884,181265,197484,143653,181265,251364,103884,181265,200153]},{"text":"Hello World! :: intercepted :: received"}]}
+{"alice":{"rsa":{"p":353,"q":739,"e":74609,"n":260867,"r":259776,"d":250577}},"bob":{"rsa":{"p":37,"q":733,"e":17359,"n":27121,"r":26352,"d":1471}},"charlie":{"rsa":{"p":313,"q":1009,"e":224249,"n":315817,"r":314496,"d":305993}},"communication":[{"text":"University of London","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110]},{"encoded":[51695,7876,216371,187465,245967,86567,170449,216371,84549,65399,158992,138625,51377,158992,272409,138625,7876,101075,138625,7876]},{"text":"University of London :: intercepted","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[180276,96682,290466,200611,288925,151909,239338,290466,167979,71118,48758,12480,246717,48758,44604,12480,96682,278234,12480,96682,48758,49069,49069,48758,290466,96682,167979,288925,151909,186226,288925,70993,167979,288925,278234]},{"text":"University of London :: intercepted :: received","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100,32,58,58,32,114,101,99,101,105,118,101,100]}]}
+{"alice":{"rsa":{"p":313,"q":787,"e":44429,"n":246331,"r":245232,"d":136037}},"bob":{"rsa":{"p":103,"q":521,"e":23657,"n":53663,"r":53040,"d":16553}},"charlie":{"rsa":{"p":439,"q":857,"e":341965,"n":376223,"r":374928,"d":95077}},"communication":[{"text":"Hi Bob!","encoded":[72,105,32,66,111,98,33]},{"encoded":[353251,34421,150268,286700,56706,306602,212817]},{"text":"Hi Bob! :: intercepted","encoded":[72,105,32,66,111,98,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[194469,350993,125350,116698,175587,292246,102367,125350,130545,130545,125350,350993,59464,136675,36166,298197,247651,36166,71422,136675,36166,265525]},{"text":"Hi Bob! :: intercepted :: received","encoded":[72,105,32,66,111,98,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100,32,58,58,32,114,101,99,101,105,118,101,100]}]}
+{"alice":{"rsa":{"p":313,"q":787,"e":118865,"n":246331,"r":245232,"d":243761}},"bob":{"rsa":{"p":157,"q":641,"e":29203,"n":100637,"r":99840,"d":48667}},"charlie":{"rsa":{"p":373,"q":977,"e":258845,"n":364421,"r":363072,"d":74933}},"communication":[{"text":"Hello World!","encoded":[72,101,108,108,111,32,87,111,114,108,100,33]},{"encoded":[291497,323875,261384,261384,322480,279160,194042,322480,327447,261384,353896,336665]},{"text":"Hello World! :: intercepted","encoded":[72,101,108,108,111,32,87,111,114,108,100,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[294580,181265,149385,149385,283553,136995,216187,283553,197484,149385,200153,290070,136995,251883,251883,136995,353286,60176,103884,181265,197484,143653,181265,251364,103884,181265,200153]},{"text":"Hello World! :: intercepted :: received","encoded":[72,101,108,108,111,32,87,111,114,108,100,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100,32,58,58,32,114,101,99,101,105,118,101,100]}]}
 ```
 
-The first two lines are your name (in CamelCase) and your SRN. The following 3 lines are the outputs corresponding to the 3 input lines. To explain the output we'll look at the first two input-output pair in turn.
+The first two lines are _your name_ (in CamelCase) and _your SRN_. The following 3 lines are the outputs corresponding to the 3 input lines. To explain the output, we'll look at the first two input-output pairs in turn.
 
 ### First example
 
@@ -160,42 +165,39 @@ This is the simplest input:
 
 Only the initial plain text is given: _University of London_. Nothing is given about  __Alice__, __Bob__ and __Charlie__, therefore _all_ their key-pairs have to be generated by you.
 
-#### Possile output
+#### Possible output
 
 Outputs will vary depending on what _p_, _q_ and _e_ values you have generated for __Alice__, __Bob__ and __Charlie__, but the correct format of the output is the following:    
 
 ```json
 {
-    "alice": {
-        "rsa": { "p": 157, "q": 773, "e": 54703, "n": 121361, "r": 120432, "d": 87151 }
-    },
-    "bob": {
-        "rsa": { "p": 59, "q": 941, "e": 12303, "n": 55519, "r": 54520, "d": 32447 }
-    },
-    "charlie": {
-        "rsa": { "p": 223, "q": 941, "e": 138137, "n": 209843, "r": 208680, "d": 148673 }
-    },
+    "alice": { "rsa": { "p": 353, "q": 739, "e": 74609, "n": 260867, "r": 259776, "d": 250577 } },
+    "bob": { "rsa": { "p": 37, "q": 733, "e": 17359, "n": 27121, "r": 26352, "d": 1471 } },
+    "charlie": { "rsa": { "p": 313, "q": 1009, "e": 224249, "n": 315817, "r": 314496, "d": 305993 } },
     "communication": [
         { "text": "University of London", "encoded": [85, 110, 105, 118, 101, 114, 115, 105, 116, 121, 32, 111, 102, 32, 76, 111, 110, 100, 111, 110] }, 
-        { "encoded": [151949, 97345, 92116, 100345, 87441, 177085, 116675, 92116, 50469, 89969, 9459, 148491, 152971, 9459, 13937, 148491, 97345, 89405, 148491, 97345] },
-        { "text": "University of London :: intercepted", "encoded": [85, 110, 105, 118, 101, 114, 115, 105, 116, 121, 32, 111, 102, 32, 76, 111, 110, 100, 111, 110, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100] },
-        { "encoded": [172769, 123251, 52491, 2295, 160592, 157810, 56443, 52491, 161029, 131962, 199946, 141598, 192674, 199946, 122683, 141598, 123251, 7267, 141598, 123251, 199946, 115298, 115298, 199946, 52491, 123251, 161029, 160592, 157810, 197006, 160592, 206468, 161029, 160592, 7267] },
-        { "text": "University of London :: intercepted :: received" }
+        { "encoded": [51695, 7876, 216371, 187465, 245967, 86567, 170449, 216371, 84549, 65399, 158992, 138625, 51377, 158992, 272409, 138625, 7876, 101075, 138625, 7876] },
+        { "text": "University of London :: intercepted", "encoded": [85, 110, 105, 118, 101, 114, 115, 105, 116, 121, 32, 111, 102, 32, 76, 111, 110, 100, 111, 110, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100] }, 
+        { "encoded": [180276, 96682, 290466, 200611, 288925, 151909, 239338, 290466, 167979, 71118, 48758, 12480, 246717, 48758, 44604, 12480, 96682, 278234, 12480, 96682, 48758, 49069, 49069, 48758, 290466, 96682, 167979, 288925, 151909, 186226, 288925, 70993, 167979, 288925, 278234] },
+        { "text": "University of London :: intercepted :: received", "encoded": [85, 110, 105, 118, 101, 114, 115, 105, 116, 121, 32, 111, 102, 32, 76, 111, 110, 100, 111, 110, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100, 32, 58, 58, 32, 114, 101, 99, 101, 105, 118, 101, 100] }
     ]
 }
 ```
 
 __Important__: the actual output will be a single line, but a pretty-print is used in this description such that you can better understand what is expected.
 
-* The ```rsa``` field will be generated / computed entirely by you.
-* You will extract the initial message, encode it, push it back to the ```communication``` list and push all subsequent messages as the initial message gets sent, intercepted and received between __Alice__, __Bob__ and __Charlie__.
+* The ```rsa``` field will be generated / computed entirely by you for __Alice__, __Bob__ and __Charlie__.
+* You will extract the initial message, encode it, push it back to the ```communication``` list and push all subsequent messages as the initial message gets sent, intercepted and received between __Alice__, __Charlie__ and __Bob__.
 * For plain texts (non-encrypted), include the encoding; i.e. the message will have both the ```text``` and the ```encoded``` fields set.
 * For encrypted texts, the encoded text suffices; i.e. the message will only have the ```encoded``` field set.
-* The ```communication``` list will have to contain the trail of messages as the initial message travels from _Alice_ to _Bob_ and is intercepted by _Charlie_.
-* _Alice_ thinks she is communicating with _Bob_, but is in fact communicating with __Charlie__, who decodes __Alice__'s message, slightly alters it (appends ' :: intercepted', for example) and sends it to __Bob__. __Bob__ will finally decode the message and marks it with ' :: received' before sending it back to _Alice_.
-* Each message is doubly-encrypted: when __A__ sends a message to __B__, the message will be encrypted with __A__'s private key and __B__'s public key.
-* Subsequently, the __B__ receives the message, it will have to be doubly-decrypted: with __B__'s private key and with __A__'s public key.
+* The ```communication``` list will have to contain the trail of messages as the initial message travels from __Alice__ to __Bob__ and is intercepted by __Charlie__.
+* __Alice__ thinks she is communicating with __Bob__, but is in fact communicating with __Charlie__, who decodes __Alice__'s message, slightly alters it (appends _:: intercepted_ to the original message, for example) and sends it to __Bob__. __Bob__ will finally decode the message and mark it with _:: received_ before sending it back to __Alice__.
+* Each message is doubly-encrypted, when __A__ sends a message to __B__, the message will be encrypted with __A__'s private key and __B__'s public key.
+* Subsequently, when __B__ receives the message, it will have to be doubly-decrypted, with __B__'s private key and with __A__'s public key.
 * You may have to pay attention to the ordering of the double encryption and the double decryption.
+* You may continue to simulate a message travelling back from __Bob__ to __Alice__ but only the first 5 messages will be checked by the automatic tester. 
+* More precisely, the ```encoded``` field of the 2nd message will be checked against the ```encoded``` field of the 1st message, using the _p_, _q_ and _e_ values you generated.
+* Subsequently, it will be checked whether the decrypted 2nd message is a subset of the 3rd message, whether the 4th message is correctly generated from the 4th and whether the decrypted 4th message is a subset of the 5th message. 
 
 ### Second example
 
@@ -207,31 +209,28 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 
 The initial plain text is given: _Hi Bob!_. In addition __Alice__'s _p_ and _q_ pair is also given; _e_ will be generated by you. Nothing is said about __Bob__ and __Charlie__, therefore _all_ their key-pairs have to be generated by you.
 
-#### Possile output
+#### Possible output
 
 Outputs will vary depending on what _p_, _q_ and _e_ values you have generated for __Bob__ and __Charlie__ and what value have you picked for __Alice__'s _e_, but the correct format of the output is the following:    
 
 ```json
 {
-    "alice": { "rsa": { "p": 313, "q": 787, "e": 33877, "n": 246331, "r": 245232, "d": 59149 } },
-    "bob": { "rsa": { "p": 73, "q": 677, "e": 43219, "n": 49421, "r": 48672, "d": 45307 } },
-    "charlie": { "rsa": { "p": 199, "q": 461, "e": 1601, "n": 91739, "r": 91080, "d": 11321 } },
+    "alice": { "rsa": { "p": 313, "q": 787, "e": 44429, "n": 246331, "r": 245232, "d": 136037 } },
+    "bob": { "rsa": { "p": 103, "q": 521, "e": 23657, "n": 53663, "r": 53040, "d": 16553 } },
+    "charlie": { "rsa": { "p": 439, "q": 857, "e": 341965, "n": 376223, "r": 374928, "d": 95077 } },
     "communication": [
-        { "text": "Hi Bob!", "encoded": [72, 105, 32, 66, 111, 98, 33] },
-        { "encoded": [229279, 201403, 88012, 212789, 165051, 117839, 160611] },
-        {
-            "text": "Hi Bob! :: intercepted",
-            "encoded": [72, 105, 32, 66, 111, 98, 33, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100]
-        },
-        {
-            "encoded": [15978, 60926, 18315, 22440, 8940, 7688, 18848, 18315, 50400, 50400, 18315, 60926, 78841, 17711, 14406, 78215, 70754, 14406, 58153, 17711, 14406, 77814]
-        },
-        { "text": "Hi Bob! :: intercepted :: received" }
+        { "text": "Hi Bob!", "encoded": [72, 105, 32, 66, 111, 98, 33] }, 
+        { "encoded": [353251, 34421, 150268, 286700, 56706, 306602, 212817] }, 
+        { "text": "Hi Bob! :: intercepted", "encoded": [72, 105, 32, 66, 111, 98, 33, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100] }, 
+        { "encoded": [194469, 350993, 125350, 116698, 175587, 292246, 102367, 125350, 130545, 130545, 125350, 350993, 59464, 136675, 36166, 298197, 247651, 36166, 71422, 136675, 36166, 265525] },
+        { "text": "Hi Bob! :: intercepted :: received", "encoded": [72, 105, 32, 66, 111, 98, 33, 32, 58, 58, 32, 105, 110, 116, 101, 114, 99, 101, 112, 116, 101, 100, 32, 58, 58, 32, 114, 101, 99, 101, 105, 118, 101, 100] }
     ]
 }
 ```
 
 __Important__: the actual output will be a single line, but a pretty-print is used in this description such that you can better understand what is expected.
+
+* Again, you may continue to simulate a message travelling back from __Bob__ to __Alice__ but only the first 5 messages will be checked by the automatic tester, as explained above. 
 
 ### Help
 
@@ -252,7 +251,6 @@ public static String decode(int[] message) {
 ```      
 
 * This splits the string to characters and uses their ASCII values.
-
 
 ## Submission
 
