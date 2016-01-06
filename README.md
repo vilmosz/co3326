@@ -17,13 +17,13 @@ This description contains the requirements for the __code submission__, which ha
 * Make sure you have __Java 8 Development Kit__ installed. 
 
 ```
-$ java -version
+    $ java -version
 ```
 
 ```
-java version "1.8.0_66"
-Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
-Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
+    java version "1.8.0_66"
+    Java(TM) SE Runtime Environment (build 1.8.0_66-b17)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
 ```
 
 * The minor version (in this case 66) is unimportant. If you don't have Java 8 Development Kit installed, install it: http://www.oracle.com/technetwork/java/javase/downloads/index.html (available for all platforms).
@@ -32,16 +32,16 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)
 * Double-check that you have at least Maven 3.3.3:
 
 ```
-$ mvn -v
+    $ mvn -v
 ```
 
 ```
-Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T12:57:37+01:00)
-Maven home: /usr/local/Cellar/maven/3.3.3/libexec
-Java version: 1.8.0_66, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
+    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T12:57:37+01:00)
+    Maven home: /usr/local/Cellar/maven/3.3.3/libexec
+    Java version: 1.8.0_66, vendor: Oracle Corporation
+    Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre
+    Default locale: en_US, platform encoding: UTF-8
+    OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 ```
 
 ## Setup
@@ -51,28 +51,28 @@ OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 * Double-check that you have the following folder structure:
 
 ```
-/co3326-master/
-	|-- README.md
-	|-- pom.xml
-	|-- test.txt
-	|-- /src/
-		|-- /main/
-			|-- /java/
-				|-- /co3326/
-					|-- App.java
-					|-- Cw1.java					
-                    |-- Message.java                    
-                    |-- User.java                    
-			|-- /resources/
-				|-- config.properties
+    /co3326-master/
+    	|-- README.md
+    	|-- pom.xml
+    	|-- test.txt
+    	|-- /src/
+    		|-- /main/
+    			|-- /java/
+    				|-- /co3326/
+    					|-- App.java
+    					|-- Cw1.java					
+                        |-- Message.java                    
+                        |-- User.java                    
+    			|-- /resources/
+    				|-- config.properties
 ```
 
 * Edit the ```pom.xml``` file
 * Look for the following lines:
 
 ```xml
-<student.name>FirstnameLastname</student.name>
-<student.srn>27644437</student.srn>
+    <student.name>FirstnameLastname</student.name>
+    <student.srn>27644437</student.srn>
 ```
 * Replace ```FirstnameLastname``` with your name using a _CamelCase_ syntax, __without__ blanks or dashes or underscores. Ex. if your name is Jane Smith, use _JaneSmith_. 
 * Replace ```27644437``` with your SRN.
@@ -84,21 +84,21 @@ OS name: "mac os x", version: "10.11.2", arch: "x86_64", family: "mac"
 * Build the project with the following command:
 
 ```
-$ mvn clean package
+    $ mvn clean package
 ```
 
 * This should have an output ending with:
 
 ```
-...
- 
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 3.114 s
-[INFO] Finished at: 2016-01-06T00:28:35+00:00
-[INFO] Final Memory: 20M/171M
-[INFO] ------------------------------------------------------------------------
+    ...
+     
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 3.114 s
+    [INFO] Finished at: 2016-01-06T00:28:35+00:00
+    [INFO] Final Memory: 20M/171M
+    [INFO] ------------------------------------------------------------------------
 ```
 
 * A new __target__ folder should have appeared in your project folder (co3326-master), which should contain - among others - a ```FirstnameLastname-jar-with-dependencies.jar``` file. Obviously, the file name will have your name in it, ex. if you're _Jane Smith_, the file will be ```JaneSmith-jar-with-dependencies.jar```.
@@ -110,17 +110,17 @@ $ mvn clean package
 * In a command-line prompt issue the following cmmand:
    
 ```
-$ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt
+    $ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt
 ```
 
 * Obviously, you'll use using the correct file name. The output should be:
 
 ```
-FirstnameLastname
-27644437
-{"communication":[{"text":"University of London"}]}
-{"alice":{},"communication":[{"text":"Hi Bob!"}]}
-{"alice":{},"bob":{},"charlie":{},"communication":[{"text":"Hello World!"}]}
+    FirstnameLastname
+    27644437
+    {"communication":[{"text":"University of London"}]}
+    {"alice":{},"communication":[{"text":"Hi Bob!"}]}
+    {"alice":{},"bob":{},"charlie":{},"communication":[{"text":"Hello World!"}]}
 ```
 
 ## Develop
@@ -258,7 +258,7 @@ public static String decode(int[] message) {
   * rebuild your project, following the instructions in the [build](#build) section,
   * re-test your project, following the instructions in the [test](#test) section,
   * double-check that the output in the required format,
-  * submit the ```target/FirstnameLastname-jar-with-dependencies.jar``` JAR file (which will obviously have your name in it, ex. if you're Jane Smith, the file will be ``JaneSmith-jar-with-dependencies.jar```).
+  * submit the ```FirstnameLastname-jar-with-dependencies.jar``` JAR file (which will obviously have your name in it, ex. if you're Jane Smith, the file will be ```JaneSmith-jar-with-dependencies.jar```), which is located in your project's ```target``` folder.
   
 ### Important
 
