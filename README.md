@@ -52,19 +52,19 @@ This description contains the requirements for the __code submission__, which ha
 
 ```
     /co3326-master/
-    	|-- README.md
-    	|-- pom.xml
-    	|-- test.txt
-    	|-- /src/
-    		|-- /main/
-    			|-- /java/
-    				|-- /co3326/
-    					|-- App.java
-    					|-- Cw1.java					
+        |-- README.md
+        |-- pom.xml
+        |-- test.txt
+        |-- /src/
+            |-- /main/
+                |-- /java/
+                    |-- /co3326/
+                        |-- App.java
+                        |-- Cw1.java                    
                         |-- Message.java                    
                         |-- User.java                    
-    			|-- /resources/
-    				|-- config.properties
+                |-- /resources/
+                    |-- config.properties
 ```
 
 * Edit the ```pom.xml``` file
@@ -78,7 +78,7 @@ This description contains the requirements for the __code submission__, which ha
 * Replace ```27644437``` with your SRN.
 * Save the ```pom.xml``` file.
 
-## <a name="build"></a>Build
+## Build
 
 * Open a command-line prompt and navigate to the __co3326-master__ folder.
 * Build the project with the following command:
@@ -103,7 +103,7 @@ This description contains the requirements for the __code submission__, which ha
 
 * A new __target__ folder should have appeared in your project folder (co3326-master), which should contain - among others - a ```FirstnameLastname-jar-with-dependencies.jar``` file. Obviously, the file name will have your name in it, ex. if you're _Jane Smith_, the file will be ```JaneSmith-jar-with-dependencies.jar```.
 
-## <a name="test"></a>Test
+## Test
 
 * The JAR file obtained with the build process is executable and contains both the Java byte code and the source code.
 * There is a _test file_ in your project folder (```test.txt```), which is a valid test file and similar to the one that will be used by the automatic testing process when your submission will be evaluated, so this is the test file you will have to make sure that your code runs against successfully.
@@ -253,15 +253,15 @@ __Important__: the actual output will be a single line, but a pretty-print is us
     }    
 ```      
 
-* These functions use the ASCII values of the characters that make up the string.
+* These functions use the ASCII values of the characters that make up the string to convert between string and a list of integers.
 
 ## Submission
 
-* Once you're happy with your code
-  * rebuild your project, following the instructions in the [build](#build) section,
-  * re-test your project, following the instructions in the [test](#test) section,
-  * double-check that the output in the required format,
-  * submit the ```FirstnameLastname-jar-with-dependencies.jar``` JAR file (which will obviously have your name in it, ex. if you're Jane Smith, the file will be ```JaneSmith-jar-with-dependencies.jar```), which is located in your project's ```target``` folder.
+Once you're happy with your code
+* rebuild your project, following the instructions in the [Build](#build) section,
+* re-test your project, following the instructions in the [Test](#test) section,
+* double-check that the output in the required format,
+* submit the ```FirstnameLastname-jar-with-dependencies.jar``` JAR file (which will obviously have your name in it, ex. if you're Jane Smith, the file will be ```JaneSmith-jar-with-dependencies.jar```), which is located in your project's ```target``` folder.
   
 ### Important
 
