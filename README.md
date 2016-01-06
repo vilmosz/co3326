@@ -237,20 +237,23 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 * You may restrict _p_ and _q_ to be primes in the __(8, 1024)__ interval.
 * Pick _e_ randomly such that it is co-prime with _r_ and compute _d_ accordingly.
 * You can assume that the ```communication``` array initially always contains the plain text of the message that __Alice__ is to send to __Bob__ that will be intercepted by __Charlie__.
-* To _encode_ plain texts (i.e. strings) to an array of integers that can be encrypted / decrypted, you may use the following functions (_Java 8_):
+* To _encode_ plain texts (i.e. strings) to an array of integers that can be encrypted / decrypted, you may use the following functions (__Java 8__):
 
 ```java
-public static int[] encode(String message) {
-    ByteBuffer buffer = ByteBuffer.wrap(message.getBytes());
-    return IntStream.generate(buffer::get).limit(buffer.remaining()).toArray();
-}
+    public static int[] encode(String message) {
+        ByteBuffer buffer = ByteBuffer.wrap(message.getBytes());
+        return IntStream.generate(buffer::get).limit(buffer.remaining()).toArray();
+    }
 
-public static String decode(int[] message) {
-    return Arrays.stream(message).mapToObj(i -> (char) i).reduce(new StringBuilder(), (sb, c) -> sb.append(c), StringBuilder::append).toString();       
-}
+    public static String decode(int[] message) {
+        return Arrays.stream(message)
+                .mapToObj(i -> (char) i)
+                .reduce(new StringBuilder(), (sb, c) -> sb.append(c), StringBuilder::append)
+                .toString();
+    }    
 ```      
 
-* This splits the string to characters and uses their ASCII values.
+* These functions use the ASCII values of the characters that make up the string.
 
 ## Submission
 
