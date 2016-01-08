@@ -124,7 +124,7 @@ This description contains the requirements for the __code submission__, which ha
 
 ## Develop
 
-The source folder, where your code will have to go is ```src/main/java/``` within yout project folder. You have a __co3326__ the top level package (```src/main/java/co3326```). Look at the ```App.java```, ```Cw1.java```, ```Message.java``` and ```User.java``` files which are already in there. These provide a starting point for your code and help you with the reading of the input file, parsing of the input lines and creation of JSON representations of the test cases as well as printing the JSON results. You can place your code next to these files. the ```main``` method is in the ```co3326.App``` class.
+The source folder, where your code will have to go is ```src/main/java/``` within yout project folder. You have a __co3326__ the top level package (```src/main/java/co3326```). Look at the ```App.java```, ```Cw1.java```, ```Message.java``` and ```User.java``` files which are already in there. These provide a starting point for your code and help you with the reading of the input file, parsing of the input lines and creation of JSON representations of the test cases as well as printing the JSON results. You can place your code next to these files. The _main_ method is in the ```co3326.App``` class.
 
 For serializing / de-serializing JSON objects, Google’s Gson library is used (https://github.com/google/gson). The build system (i.e. Maven) sorts out the dependency for you and bundles the library in your JAR file when you build the project.
 
