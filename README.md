@@ -1,4 +1,4 @@
-# CO3326 Computer security assignment 2016
+# CO3326 Computer security assignment
 
 This description contains the requirements for the __code submission__, which has to be read in conjunction with the actual assignment you are already familiar with. It is important that you follow these instructions carefully, as your code submission will be processed automatically and will not be seen by the marker unless it passes all test cases that are detailed below. 
 
@@ -46,12 +46,11 @@ This description contains the requirements for the __code submission__, which ha
 
 ## Setup
 
-* Download the skeleton project by clicking the __Download ZIP__ button above.
-* Extract the ZIP file and you will have a __co3326-master__ folder; navigate to this folder using a command-line prompt.
+* Extract the provided ZIP file and you will have a __co3326__ folder, which will be referred to as your _project folder_; navigate to it using a command-line prompt.
 * Double-check that you have the following folder structure:
 
 ```
-    /co3326-master/
+    /co3326/
         |-- README.md
         |-- pom.xml
         |-- test.txt
@@ -80,7 +79,7 @@ This description contains the requirements for the __code submission__, which ha
 
 ## Build
 
-* Open a command-line prompt and navigate to the __co3326-master__ folder.
+* Open a command-line prompt and navigate to your project folder (```co3326```).
 * Build the project with the following command:
 
 ```
@@ -101,7 +100,7 @@ This description contains the requirements for the __code submission__, which ha
     [INFO] ------------------------------------------------------------------------
 ```
 
-* A new __target__ folder should have appeared in your project folder (co3326-master), which should contain - among others - a ```FirstnameLastname-jar-with-dependencies.jar``` file. Obviously, the file name will have your name in it, ex. if you're _Jane Smith_, the file will be ```JaneSmith-jar-with-dependencies.jar```.
+* A new __target__ folder should have appeared in your project folder (```co3326/target/```), which should contain - among others - a ```FirstnameLastname-jar-with-dependencies.jar``` file. Obviously, the file name will have your name in it, ex. if you're _Jane Smith_, the file will be ```JaneSmith-jar-with-dependencies.jar```.
 
 ## Test
 
@@ -125,7 +124,7 @@ This description contains the requirements for the __code submission__, which ha
 
 ## Develop
 
-The source folder, where your code will have to go is ```src/main/java/```. You have a __co3326__ the top level package. Look at the ```App.java```, ```Cw1.java```, ```Message.java``` and ```User.java``` files which are already in there. These provide a starting point for your code and help you with the reading of the input file, parsing of the input lines and creation of JSON representations of the test cases as well as printing the JSON results.
+The source folder, where your code will have to go is ```src/main/java/``` within yout project folder. You have a __co3326__ the top level package (```src/main/java/co3326```). Look at the ```App.java```, ```Cw1.java```, ```Message.java``` and ```User.java``` files which are already in there. These provide a starting point for your code and help you with the reading of the input file, parsing of the input lines and creation of JSON representations of the test cases as well as printing the JSON results. You can place your code next to these files. the ```main``` method is in the ```co3326.App``` class.
 
 For serializing / de-serializing JSON objects, Google’s Gson library is used (https://github.com/google/gson). The build system (i.e. Maven) sorts out the dependency for you and bundles the library in your JAR file when you build the project.
 
@@ -258,6 +257,7 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 ## Submission
 
 Once you're happy with your code
+
 * rebuild your project, following the instructions in the [Build](#build) section,
 * re-test your project, following the instructions in the [Test](#test) section,
 * double-check that the output in the required format,
