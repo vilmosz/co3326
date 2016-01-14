@@ -1,6 +1,8 @@
 # CO3326 Computer security assignment
 
-This description contains the requirements for the __code submission__, which has to be read in conjunction with the actual assignment you are already familiar with. It is important that you follow these instructions carefully, as your code submission will be processed automatically and will not be seen by the marker unless it passes all test cases that are detailed below. 
+This description contains the requirements for the _code submission_, to be read in conjunction with the actual assignment with which you are already familiar. You must follow these instructions carefully, as your code submission will be processed automatically and will receive a mark of 0 if it does not pass all the test cases detailed below.
+
+Make sure you study and understand the examples of inputs and outputs which follow the general and technical guidelines. These extend on the descriptions given in the original coursework assignment document.
 
 ## General guidelines
 
@@ -10,11 +12,11 @@ This description contains the requirements for the __code submission__, which ha
 * Your programme will read the input file and treats each line as a separate _test case_ / separate instance of the problem. 
 * Each line in the test file is a JSON object.
 * Your programme will print a single line of text, containing one JSON object, for every single input line. Therefore the number of input lines will match the number of output lines.
-* The JSON objects, both input and output, have a _strict format_ you will have to conform to and there are details provided below with examples.
+* The JSON objects, both input and output, have a _strict format_ you __must__ conform to; details are provided below, with examples.
 
 ## Prerequisites
 
-* Make sure you have __Java 8 Development Kit__ installed. 
+* Make sure you have _Java 8 Development Kit_ installed. 
 
 ```
     $ java -version
@@ -28,7 +30,7 @@ This description contains the requirements for the __code submission__, which ha
 
 * The minor version (in this case 66) is unimportant. If you don't have Java 8 Development Kit installed, install it: http://www.oracle.com/technetwork/java/javase/downloads/index.html (available for all platforms).
   
-* Set up the __Maven__ build system. Instructions are available here: https://maven.apache.org/install.html (for all platforms).
+* Set up the _Maven_ build system. Instructions are available here: https://maven.apache.org/install.html (for all platforms).
 * Double-check that you have at least Maven 3.3.3:
 
 ```
@@ -70,11 +72,13 @@ This description contains the requirements for the __code submission__, which ha
 * Look for the following lines:
 
 ```xml
-    <student.name>FirstnameLastname</student.name>
+    <student.name>FamilyName</student.name>
     <student.srn>27644437</student.srn>
+    <coursework.number>1</coursework.number>        
 ```
-* Replace ```FirstnameLastname``` with your name using a _CamelCase_ syntax, __without__ blanks or dashes or underscores. Ex. if your name is Jane Smith, use _JaneSmith_. 
+* Replace ```FamilyName``` with your family name using a CamelCase syntax, _without_ blanks or dashes or underscores. Ex. if your family name is Zuckerberg, use _Zuckerberg_. 
 * Replace ```27644437``` with your SRN.
+* Set the ```coursework.number``` accordingly, i.e. leave _1_ for CW1 and put _2_ when you are to submit CW2.  
 * Save the ```pom.xml``` file.
 
 ## Build
@@ -100,13 +104,13 @@ This description contains the requirements for the __code submission__, which ha
     [INFO] ------------------------------------------------------------------------
 ```
 
-* A new __target__ folder should have appeared in your project folder (```co3326/target/```), which should contain - among others - a ```FirstnameLastname-jar-with-dependencies.jar``` file. Obviously, the file name will have your name in it, ex. if you're _Jane Smith_, the file will be ```JaneSmith-jar-with-dependencies.jar```.
+* A new __target__ folder should have appeared in your project folder (```co3326/target/```), which should contain - among others - a ```FamilyName_27644437_CO3326CW1-jar-with-dependencies.jar``` file. Obviously, the file name will have your family name in it, ex. if your family name is  _Zuckerberg_, the file will be ```Zuckerberg_27644437_CO3326CW1-jar-with-dependencies.jar```.
 
 ## Test
 
 * The JAR file obtained with the build process is executable and contains both the Java byte code and the source code.
 * There is a _test file_ in your project folder (```test.txt```), which is a valid test file and similar to the one that will be used by the automatic testing process when your submission will be evaluated, so this is the test file you will have to make sure that your code runs against successfully.
-* In a command-line prompt issue the following cmmand:
+* In a command-line prompt issue the following command:
    
 ```
     $ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt
@@ -183,7 +187,7 @@ Outputs will vary depending on what _p_, _q_ and _e_ values you have generated f
 }
 ```
 
-__Important__: the actual output will be a single line, but a pretty-print is used in this description such that you can better understand what is expected.
+__Important__: the actual output will be a single line, but a pretty-print is used in this description so that you can better understand what is expected.
 
 * The ```rsa``` field will be generated / computed entirely by you for __Alice__, __Bob__ and __Charlie__.
 * You will extract the initial message, encode it, push it back to the ```communication``` list and push all subsequent messages as the initial message gets sent, intercepted and received between __Alice__, __Charlie__ and __Bob__.
@@ -196,7 +200,7 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 * You may have to pay attention to the ordering of the double encryption and the double decryption.
 * You may continue to simulate a message travelling back from __Bob__ to __Alice__ but only the first 5 messages will be checked by the automatic tester. 
 * More precisely, the ```encoded``` field of the 2nd message will be checked against the ```encoded``` field of the 1st message, using the _p_, _q_ and _e_ values you generated.
-* Subsequently, it will be checked whether the decrypted 2nd message is a subset of the 3rd message, whether the 4th message is correctly generated from the 4th and whether the decrypted 4th message is a subset of the 5th message. 
+* Subsequently, it will be checked whether the decrypted 2nd message is a subset of the 3rd message, whether the 4th message is correctly generated from the 3rd and whether the decrypted 4th message is a subset of the 5th message. 
 
 ### Second example
 
@@ -206,7 +210,7 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 { "alice" : { "rsa" : { "p" : 313, "q" : 787 } }, "communication" : [ { "text" : "Hi Bob!" } ] }
 ```
 
-The initial plain text is given: _Hi Bob!_. In addition __Alice__'s _p_ and _q_ pair is also given; _e_ will be generated by you. Nothing is said about __Bob__ and __Charlie__, therefore _all_ their key-pairs have to be generated by you.
+The initial plain text is given: _"Hi Bob!"_. In addition, __Alice__'s _p_ and _q_ pair is also given; _e_ will be generated by you. Nothing is said about __Bob__ and __Charlie__, therefore _all_ their key-pairs and have to be generated by you.
 
 #### Possible output
 
@@ -227,7 +231,7 @@ Outputs will vary depending on what _p_, _q_ and _e_ values you have generated f
 }
 ```
 
-__Important__: the actual output will be a single line, but a pretty-print is used in this description such that you can better understand what is expected.
+__Important__: the actual output will be a single line, but a pretty-print is used in this description so that you can better understand what is expected.
 
 * Again, you may continue to simulate a message travelling back from __Bob__ to __Alice__ but only the first 5 messages will be checked by the automatic tester, as explained above. 
 
@@ -236,7 +240,7 @@ __Important__: the actual output will be a single line, but a pretty-print is us
 * You may restrict _p_ and _q_ to be primes in the __(8, 1024)__ interval.
 * Pick _e_ randomly such that it is co-prime with _r_ and compute _d_ accordingly.
 * You can assume that the ```communication``` array initially always contains the plain text of the message that __Alice__ is to send to __Bob__ that will be intercepted by __Charlie__.
-* To _encode_ plain texts (i.e. strings) to an array of integers that can be encrypted / decrypted, you may use the following functions (__Java 8__):
+* To _encode_ plain texts (i.e. strings) to an array of integers that can be encrypted / decrypted, you may use the following functions (_Java 8_):
 
 ```java
     public static int[] encode(String message) {
@@ -261,9 +265,8 @@ Once you're happy with your code
 * rebuild your project, following the instructions in the [Build](#build) section,
 * re-test your project, following the instructions in the [Test](#test) section,
 * double-check that the output in the required format,
-* submit the ```FirstnameLastname-jar-with-dependencies.jar``` JAR file (which will obviously have your name in it, ex. if you're Jane Smith, the file will be ```JaneSmith-jar-with-dependencies.jar```), which is located in your project's ```target``` folder.
+* submit the ```FamilyName_27644437_CO3326CW1-jar-with-dependencies.jar``` JAR file (which will obviously have your family name in it, ex. if your family name is Zuckerberg, the file would be ```Zuckerberg_27644437_CO3326CW1-jar-with-dependencies.jar```), which is located in your project's ```target``` folder.
   
 ### Important
 
-__Only__ a JAR file, which uses the correct naming scheme and produces output in the described format will be looked at, and __only__ if it passes the automatic tests. A ZIPed project folder or individual Java or Class files will __not__ be looked at, and will be awarded a _0_ mark. If you correctly follow the description above, the JAR file you submit will contain the source code that you worked on and will give the marker the opportunity to check it, once your byte code passes the automatic execution phase.          
-
+__Only__ a JAR file, which uses the correct naming scheme and produces output in the described format will be looked at, and __only__ if it passes the automatic tests. A ZIPed project folder or individual Java or Class files will __not__ be looked at, and will be awarded a _0_ mark. If you correctly follow the description above, the JAR file you submit will contain the source code that you worked on and will give the marker the opportunity to check it, once your byte code passes the automatic execution phase.

@@ -10,11 +10,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>CO3326 Courseworks</name>
+    <name>CO3326 Coursework</name>
 
     <properties>
-        <student.name>FirstnameLastname</student.name>
-        <student.srn>27644437</student.srn>        
+        <student.name>FamilyName</student.name>
+        <student.srn>27644437</student.srn>
+        <coursework.number>1</coursework.number>        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -36,7 +37,7 @@
     </dependencies>
 
     <build>
-        <finalName>${student.name}</finalName>
+        <finalName>${student.name}_${student.srn}_CO3326CW${coursework.number}</finalName>
         <resources>
             <resource>
                 <directory>src/main/java</directory>
