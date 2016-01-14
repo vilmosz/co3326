@@ -113,13 +113,13 @@ Make sure you study and understand the examples of inputs and outputs which foll
 * In a command-line prompt issue the following command:
    
 ```
-    $ java -jar target/FirstnameLastname-jar-with-dependencies.jar test.txt
+    $ java -jar target/FamilyName_27644437_CO3326CW1-jar-with-dependencies.jar test.txt
 ```
 
 * Obviously, you'll use using the correct file name. The output should be:
 
 ```
-    FirstnameLastname
+    FamilyName
     27644437
     {"communication":[{"text":"University of London"}]}
     {"alice":{},"communication":[{"text":"Hi Bob!"}]}
@@ -147,7 +147,7 @@ Inspect the ```test.txt``` in your project folder:
 The following output is correct for this test file, both in terms of _format_ and _content_:
 
 ```json
-FirstnameLastname
+FamilyName
 27644437
 {"alice":{"rsa":{"p":353,"q":739,"e":74609,"n":260867,"r":259776,"d":250577}},"bob":{"rsa":{"p":37,"q":733,"e":17359,"n":27121,"r":26352,"d":1471}},"charlie":{"rsa":{"p":313,"q":1009,"e":224249,"n":315817,"r":314496,"d":305993}},"communication":[{"text":"University of London","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110]},{"encoded":[51695,7876,216371,187465,245967,86567,170449,216371,84549,65399,158992,138625,51377,158992,272409,138625,7876,101075,138625,7876]},{"text":"University of London :: intercepted","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[180276,96682,290466,200611,288925,151909,239338,290466,167979,71118,48758,12480,246717,48758,44604,12480,96682,278234,12480,96682,48758,49069,49069,48758,290466,96682,167979,288925,151909,186226,288925,70993,167979,288925,278234]},{"text":"University of London :: intercepted :: received","encoded":[85,110,105,118,101,114,115,105,116,121,32,111,102,32,76,111,110,100,111,110,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100,32,58,58,32,114,101,99,101,105,118,101,100]}]}
 {"alice":{"rsa":{"p":313,"q":787,"e":44429,"n":246331,"r":245232,"d":136037}},"bob":{"rsa":{"p":103,"q":521,"e":23657,"n":53663,"r":53040,"d":16553}},"charlie":{"rsa":{"p":439,"q":857,"e":341965,"n":376223,"r":374928,"d":95077}},"communication":[{"text":"Hi Bob!","encoded":[72,105,32,66,111,98,33]},{"encoded":[353251,34421,150268,286700,56706,306602,212817]},{"text":"Hi Bob! :: intercepted","encoded":[72,105,32,66,111,98,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100]},{"encoded":[194469,350993,125350,116698,175587,292246,102367,125350,130545,130545,125350,350993,59464,136675,36166,298197,247651,36166,71422,136675,36166,265525]},{"text":"Hi Bob! :: intercepted :: received","encoded":[72,105,32,66,111,98,33,32,58,58,32,105,110,116,101,114,99,101,112,116,101,100,32,58,58,32,114,101,99,101,105,118,101,100]}]}
