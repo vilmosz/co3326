@@ -116,7 +116,7 @@ Make sure you study and understand the examples of inputs and outputs which foll
     $ java -jar target/FamilyName_27644437_CO3326CW1-jar-with-dependencies.jar test.txt
 ```
 
-* Obviously, you'll use using the correct file name. The output should be:
+* The output should be similar to this (with your family name and SRN):
 
 ```
     FamilyName
