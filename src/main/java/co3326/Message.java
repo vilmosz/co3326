@@ -4,5 +4,6 @@ public class Message {
 
     protected String text;
     protected int[] encoded;
+    protected int[] encrypted;
 
 }
